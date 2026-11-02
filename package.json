@@ -1,0 +1,38 @@
+{
+  "name": "sfcc-prime-membership",
+  "version": "1.0.0",
+  "private": true,
+  "license": "UNLICENSED",
+  "description": "SFCC/SFRA cartridges for a paid annual membership: three USD plans, verified payment, prorated upgrades, capped member discounts and free shipping, members-only and early access products, lifecycle jobs and a Business Manager desk.",
+  "author": "Vedesh Reddy",
+  "engines": {
+    "node": ">=22"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Vedesh-reddy/sfcc-prime-membership.git"
+  },
+  "scripts": {
+    "test": "mocha 'test/plugin_primemenbership/unit/*.test.js' 'test/plugin_primemenbership/integration/*.test.js'",
+    "build": "node scripts/build.js",
+    "lint:js": "eslint cartridges test scripts --ext .js",
+    "lint:isml": "node scripts/check-templates.js",
+    "lint:docs": "node scripts/check-docs.js",
+    "lint": "npm run lint:js && npm run lint:isml && npm run lint:docs",
+    "validate": "npm run lint && npm test && npm run build",
+    "package:metadata": "node scripts/package-metadata.js"
+  },
+  "devDependencies": {
+    "webpack": "5.106.2",
+    "eslint": "8.57.1",
+    "eslint-config-airbnb-base": "15.0.0",
+    "eslint-config-prettier": "9.1.2",
+    "eslint-plugin-import": "2.32.0",
+    "mocha": "10.8.2",
+    "isml-linter": "5.43.14",
+    "archiver": "7.0.1",
+    "chai": "3.5.0",
+    "sass": "1.77.8",
+    "sinon": "17.0.1"
+  }
+}
