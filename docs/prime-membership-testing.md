@@ -31,7 +31,7 @@ It also has limits. It can't prove how the real platform behaves, and it only kn
 | `integration/purchase.test.js` | Join to activation, delayed and failed payments, compatibility |
 | `integration/upgrade.test.js` | Upgrades and renewals through the routes, stale quotes, tax changes |
 | `integration/security.test.js` | Access, CSRF, forged payments, duplicates, concurrency, BM permissions, data leakage |
-| `integration/jobs.test.js` | All seven jobs: idempotency, batching, checkpoints, reversal, loyalty |
+| `integration/jobs.test.js` | All seven job steps: idempotency, batching, checkpoints, reversal, loyalty |
 | `integration/api.test.js` | Custom API contracts and ownership |
 
 ## Sandbox results

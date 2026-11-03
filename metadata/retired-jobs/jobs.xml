@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jobs xmlns="http://www.demandware.com/xml/impex/jobs/2015-07-01">
+    <job job-id="MembershipExpirationJob" mode="delete">
+        <triggers/>
+    </job>
+    <job job-id="MembershipRenewalJob" mode="delete">
+        <triggers/>
+    </job>
+    <job job-id="MembershipBenefitResetJob" mode="delete">
+        <triggers/>
+    </job>
+    <job job-id="MembershipBirthdayRewardJob" mode="delete">
+        <triggers/>
+    </job>
+    <job job-id="MembershipReconciliationJob" mode="delete">
+        <triggers/>
+    </job>
+    <job job-id="MembershipReportingJob" mode="delete">
+        <triggers/>
+    </job>
+    <job job-id="MembershipNotificationJob" mode="delete">
+        <triggers/>
+    </job>
+</jobs>

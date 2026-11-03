@@ -24,7 +24,7 @@ sequenceDiagram
         P->>P: Membership changes, in one transaction
     else Not paid yet
         P-->>C: "We are confirming your payment"
-        Note over P,O: MembershipReconciliationJob checks again
+        Note over P,O: PrimeMembership-Job checks again
     end
 ```
 
