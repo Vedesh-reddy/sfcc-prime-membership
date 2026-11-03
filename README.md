@@ -69,7 +69,7 @@ The final amount with tax is shown before paying (2), and the card goes through 
 
 ![Payment](docs/images/sf-join-payment.png)
 
-If the order isn't paid yet, the customer is told so (1), with the order and total (2). Nothing is granted. `MembershipReconciliationJob` activates the membership when the order is verified as paid.
+If the order isn't paid yet, the customer is told so (1), with the order and total (2). Nothing is granted. `Reconciliation` step of `PrimeMembership-Job` activates the membership when the order is verified as paid.
 
 ![Waiting for payment](docs/images/sf-join-confirmation.png)
 
@@ -159,7 +159,7 @@ Merchant Tools > Prime Membership. Each menu item is a separate permission, so s
 
 ![Fee order](docs/images/bm-order.png)
 
-**Jobs:** seven jobs (1), which ship with schedules off. Each is bounded by `MaxItems` and safe to repeat.
+**Jobs:** one job, `PrimeMembership-Job`, with seven steps (1), which ships with its schedule off. Each step is bounded by `MaxItems` and safe to repeat.
 
 ![Jobs](docs/images/bm-jobs.png)
 
@@ -171,6 +171,12 @@ Merchant Tools > Prime Membership. Each menu item is a separate permission, so s
 | `cartridges/bm_primemenbership` | Business Manager desk |
 | `metadata/plugin_primemenbership` | Site import archive: custom objects, preferences, plans, jobs |
 | `test/plugin_primemenbership` | Automated tests: `npm test` |
+
+## Background job
+
+All background work runs in one Business Manager job, `PrimeMembership-Job`, with its steps in order. Steps that run less often than the job keep their own timing with `RunEveryMinutes` or `RunAtHourUTC`, and finish `NOT_DUE` when skipped. A failing step doesn't stop the next one, and the last step, `ReportFailures`, then marks the job `ERROR`.
+
+Upgrading from a version with several jobs? Import `metadata/retired-jobs/jobs.xml` once to delete the old ones.
 
 ## Documents
 
